@@ -5,8 +5,8 @@
 To set up the python virtual environment required to execute this code, run the following in your terminal:
 
 ```
-git clone https://github.com/matthew-dalton/bias-network.git
-cd bias-network
+git clone https://github.com/matthew-dalton/meshOfCivilizations.git
+cd meshOfCivilizations
 python3 -m virtualenv venv
 source venv/bin/activate
 pip install < requirements.txt
