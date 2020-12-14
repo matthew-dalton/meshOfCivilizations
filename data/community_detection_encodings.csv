@@ -1,0 +1,91 @@
+Index,Code,Index,Country,ml,fg,sg,le2,le3,le4,groups,group_num
+1,AE,1,United Arab Emirates,7,7,1,0,0,3,islam,0
+2,AO,2,Angola,5,5,3,0,2,2,afric,1
+3,AR,3,Argentina,2,2,6,0,2,2,latam,2
+4,AT,4,Austria,2,2,6,0,2,2,wstrn,3
+5,AU,5,Australia,6,6,10,0,0,3,wstrn,3
+6,AZ,6,Azerbaijan,2,2,6,1,1,1,islam,0
+7,BD,7,Bangladesh,1,0,5,1,1,1,islam,0
+8,BE,8,Belgium,5,9,10,0,0,3,wstrn,3
+9,BF,9,Burkina Faso,0,0,1,0,0,0,afric,1
+10,BG,10,Bulgaria,2,0,6,0,0,3,ortho,4
+11,BI,11,Burundi,2,2,6,0,2,2,afric,1
+12,BO,12,Bolivia,0,0,4,0,2,2,latam,2
+13,BR,13,Brazil,0,0,1,0,0,0,latam,2
+14,BY,14,Belarus,2,2,6,0,0,3,ortho,4
+15,CA,15,Canada,1,1,7,0,0,3,wstrn,3
+16,CD,16,The Democratic Republic Of Congo,0,0,0,0,0,0,NaN,5
+17,CH,17,Switzerland,2,2,6,0,2,2,wstrn,3
+18,CI,18,Cote D'Ivoire,2,2,6,0,2,2,afric,1
+19,CL,19,Chile,7,7,1,0,2,2,latam,2
+20,CM,20,Cameroon,0,0,4,1,1,1,afric,1
+21,CN,21,China,6,6,8,0,2,2,sinic,7
+22,CO,22,Colombia,5,2,6,0,0,3,latam,2
+23,CZ,23,Czech Republic,1,1,5,0,2,2,wstrn,3
+24,DE,24,Germany,2,2,6,0,2,2,wstrn,3
+25,DK,25,Denmark,6,6,8,1,1,1,wstrn,3
+26,DO,26,Dominican Republic,1,1,5,1,1,1,latam,2
+27,DZ,27,Algeria,5,9,3,0,0,3,islam,0
+28,EC,28,Ecuador,5,5,3,0,2,2,latam,2
+29,EG,29,Egypt,2,2,6,1,1,1,islam,0
+30,ES,30,Spain,0,0,4,1,1,1,wstrn,3
+31,ET,31,Ethiopia,10,11,11,0,2,2,NaN,5
+32,FI,32,Finland,6,6,8,1,1,1,wstrn,3
+33,FR,33,France,0,0,4,0,0,0,wstrn,3
+34,GB,34,United Kingdom,7,7,1,0,2,2,wstrn,3
+35,GH,35,Ghana,5,5,3,0,0,3,afric,1
+36,GR,36,Greece,1,1,7,0,0,3,ortho,4
+37,GT,37,Guatemala,9,10,7,0,2,2,latam,2
+38,HN,38,Honduras,6,6,8,0,2,2,latam,2
+39,HT,39,Haiti,5,9,10,0,0,3,NaN,5
+40,HU,40,Hungary,3,3,9,0,2,2,wstrn,3
+41,ID,41,Indonesia,2,0,6,1,1,1,islam,0
+42,IL,42,Israel,0,0,4,0,2,2,wstrn,3
+43,IN,43,India,1,1,7,0,2,2,hindu,8
+44,IT,44,Italy,3,3,9,0,2,2,wstrn,3
+45,JO,45,Jordan,5,9,10,0,0,3,islam,0
+46,JP,46,Japan,2,2,6,0,0,3,NaN,5
+47,KE,47,Kenya,2,0,6,0,2,2,afric,1
+48,KH,48,Cambodia,0,0,10,0,0,3,buddh,6
+49,KR,49,Republic Of Korea,6,6,8,1,1,1,sinic,7
+50,KZ,50,Kazakhstan,5,5,3,0,2,2,ortho,4
+51,LA,51,Laos,6,6,8,0,2,2,buddh,6
+52,LK,52,Sri Lanka,5,9,10,0,0,3,buddh,6
+53,MA,53,Morocco,0,0,4,1,1,1,islam,0
+54,MG,54,Madagascar,6,6,8,1,1,1,afric,1
+55,ML,55,Mali,9,10,7,0,2,2,islam,0
+56,MX,56,Mexico,2,2,6,0,2,2,latam,2
+57,MY,57,Malaysia,7,7,1,0,0,3,islam,0
+58,MZ,58,Mozambique,1,1,7,0,0,3,afric,1
+59,NG,59,Nigeria,6,6,8,1,1,1,afric,1
+60,NI,60,Nicaragua,6,6,8,1,1,1,latam,2
+61,NL,61,Netherlands,4,4,2,0,0,0,wstrn,3
+62,NP,62,Nepal,5,5,3,0,2,2,hindu,8
+63,PE,63,Peru,10,11,11,0,2,2,latam,2
+64,PG,64,Papua New Guinea,6,6,8,1,1,1,wstrn,3
+65,PH,65,Philippines,7,7,1,0,0,3,wstrn,3
+66,PK,66,Pakistan,5,9,10,0,0,3,islam,0
+67,PL,67,Poland,6,5,3,0,0,0,wstrn,3
+68,PT,68,Portugal,2,2,6,0,0,0,wstrn,3
+69,PY,69,Paraguay,1,1,5,0,0,0,latam,2
+70,RO,70,Romania,0,0,0,0,0,0,NaN,5
+71,RU,71,Russia,0,2,1,0,2,2,ortho,4
+72,SA,72,Saudi Arabia,6,6,8,1,1,1,islam,0
+73,SD,73,Sudan,6,5,3,1,1,1,islam,0
+74,SE,74,Sweden,5,0,4,0,2,2,wstrn,3
+75,SG,75,Singapore,5,5,3,0,0,3,buddh,6
+76,SK,76,Slovakia,5,9,3,0,0,3,wstrn,3
+77,SN,77,Senegal,8,8,0,1,1,1,islam,0
+78,SV,78,El Salvador,8,8,0,1,1,1,latam,2
+79,TH,79,Thailand,1,0,5,1,1,1,buddh,6
+80,TN,80,Tunisia,1,1,5,0,0,3,islam,0
+81,TR,81,Turkey,5,9,3,0,0,3,islam,0
+82,UA,82,Ukraine,9,10,7,0,2,2,ortho,4
+83,US,83,United States,4,4,2,0,0,0,wstrn,3
+84,UZ,84,Uzbekistan,7,7,1,0,0,3,islam,0
+85,VE,85,Venezuela,6,6,8,1,1,1,latam,2
+86,VN,86,Vietnam,8,8,0,1,1,1,sinic,7
+87,YE,87,Yemen,4,4,2,0,0,0,islam,0
+88,ZA,88,South Africa,7,7,1,0,2,2,afric,1
+89,ZM,89,Zambia,5,9,6,0,0,3,afric,1
+90,ZW,90,Zimbabwe,6,6,10,0,0,3,NaN,5
