@@ -1,23 +1,22 @@
-__author__ = 'lisette.espin'
+__author__ = 'espin'
 
 #######################################################################
 # Dependencies
 #######################################################################
-import gc
 import sys
-import time
-import matplotlib
 import collections
 import numpy as np
-import pandas as pd
-from scipy import stats
-import matplotlib.pyplot as plt
-from libs.profiling import Profiling
-from scipy.stats.mstats import zscore
-from statsmodels.formula.api import ols
+import pandas
+import matplotlib
 matplotlib.use('Agg')
-
-import espinutils as utils
+import matplotlib.pyplot as plt
+from statsmodels.formula.api import ols
+from libs import utils
+from libs.profiling import Profiling
+import time
+import gc
+from scipy import stats
+from scipy.stats.mstats import zscore
 
 #######################################################################
 # MRQAP
@@ -40,9 +39,8 @@ class MRQAP():
         :return:
         '''
         self.X = X                                  # independent variables: dictionary of numpy.array
-        self.target = list(Y.keys())[0]             # dependent variable: string
-        self.Y = Y[self.target]                     # dependent variable: numpy.array
-        self.n = self.Y.shape[0]                    # number of nodes
+        self.Y = Y                                  # dependent variable: dictionary numpy.array
+        self.n = list(Y.values())[0].shape[0]             # number of nodes
         self.npermutations = npermutations          # number of permutations
         self.diagonal = diagonal                    # False then diagonal is removed
         self.directed = directed                    # directed True, undirected False
@@ -61,15 +59,15 @@ class MRQAP():
         Also, the betas and tvalues dictionaries are initialized (key:independent variables, value:[])
         :return:
         '''
-        self.v[self.target] = self._getFlatten(self.Y)
+        self.v[list(self.Y.keys())[0]] = self._getFlatten(list(self.Y.values())[0])
         self._initCoefficients(INTERCEPT)
         for k,x in self.X.items():
-            if k == self.target:
-                utils.printf('ERROR: Idependent variable cannot be named \'{}\''.format(self.target), self.logfile)
+            if k == list(self.Y.keys())[0]:
+                utils.printf('ERROR: Idependent variable cannot be named \'[}\''.format(list(self.Y.keys())[0]), self.logfile)
                 sys.exit(0)
             self.v[k] = self._getFlatten(x)
             self._initCoefficients(k)
-        self.data = pd.DataFrame(self.v)
+        self.data = pandas.DataFrame(self.v)
         self.model = self._fit(self.v.keys(), self.data)
         del(self.X)
 
@@ -100,7 +98,7 @@ class MRQAP():
         :return:
         '''
         for p in range(self.npermutations):
-            self.Ymod = self.Y.copy()
+            self.Ymod = list(self.Y.values())[0].copy()
             self._rmperm()
             model = self._newfit()
             self._update_betas(model._results.params)
@@ -115,11 +113,11 @@ class MRQAP():
         :return:
         '''
         newv = collections.OrderedDict()
-        newv[self.target] = self._getFlatten(self.Ymod)
+        newv[list(self.Y.keys())[0]] = self._getFlatten(self.Ymod)
         for k,x in self.v.items():
-            if k != self.target:
+            if k != list(self.Y.keys())[0]:
                 newv[k] = x
-        newdata = pd.DataFrame(newv)
+        newdata = pandas.DataFrame(newv)
         newfit = self._fit(newv.keys(), newdata)
         del(newdata)
         del(newv)
@@ -139,7 +137,7 @@ class MRQAP():
         if self.standarized:
             data = data.apply(lambda x: (x - np.mean(x)) / (np.std(x)), axis=0) #axis: 0 to each column, 1 to each row
 
-        formula = '{} ~ {}'.format(self.target, ' + '.join([k for k in keys if k != self.target]))
+        formula = '{} ~ {}'.format(list(self.Y.keys())[0], ' + '.join([k for k in keys if k != list(self.Y.keys())[0]]))
         return ols(formula, data).fit()
 
     def _initCoefficients(self, key):
@@ -198,51 +196,51 @@ class MRQAP():
         Print the OLS summary
         :return:
         '''
-        utils.printf('')
-        utils.printf('=== Summary OLS (original) ===\n{}'.format(self.model.summary()))
-        utils.printf('')
-        utils.printf('# of Permutations: {}'.format(self.npermutations))
+        utils.printf('', self.logfile)
+        utils.printf('=== Summary OLS (original) ===\n{}'.format(self.model.summary()), self.logfile)
+        utils.printf('', self.logfile)
+        utils.printf('# of Permutations: {}'.format(self.npermutations), self.logfile)
 
     def _summary_betas(self):
         '''
         Summary of beta coefficients
         :return:
         '''
-        utils.printf('')
-        utils.printf('=== Summary beta coefficients ===')
-        utils.printf('{:20s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}'.format('INDEPENDENT VAR.','MIN','MEDIAN','MEAN','MAX','STD. DEV.','B.COEFF.','As Large', 'As Small', 'P-VALUE'))
+        utils.printf('', self.logfile)
+        utils.printf('=== Summary beta coefficients ===', self.logfile)
+        utils.printf('{:20s}{:>10s}{:>10s}{:>10s}{:>10s}{:>12s}{:>12s}{:>12s}{:>12s}{:>12s}'.format('INDEPENDENT VAR.','MIN','MEDIAN','MEAN','MAX','STD. DEV.','B.COEFF.','As Large', 'As Small', 'P-VALUE'), self.logfile)
         for k,v in self.betas.items():
             beta = self.model.params[k]
             pstats = self.model.pvalues[k]
             aslarge = sum([1 for c in v if c >= beta]) / float(len(v))
             assmall = sum([1 for c in v if c <= beta]) / float(len(v))
-            utils.printf('{:20s}{:10f}{:10f}{:10f}{:10f}{:10f}{:10f}{:10f}{:10f}{:10f}'.format(k,min(v),sorted(v)[int(round(len(v)/2.))],sum(v)/len(v),max(v),round(np.std(v),6),beta,aslarge,assmall,round(float(pstats),2)))
+            utils.printf('{:20s}{:10f}{:10f}{:10f}{:10f}{:12f}{:12f}{:12f}{:12f}{:12f}'.format(k,min(v),sorted(v)[int(len(v)/2)],sum(v)/len(v),max(v),round(np.std(v),6),beta,aslarge,assmall,round(float(pstats),2)), self.logfile)
 
     def _summary_tvalues(self):
         '''
         Summary t-values
         :return:
         '''
-        utils.printf('')
-        utils.printf('=== Summary T-Values ===')
-        utils.printf('{:20s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}{:>10s}'.format('INDEPENDENT VAR.','MIN','MEDIAN','MEAN','MAX','STD. DEV.','T-TEST','As Large', 'As Small'))
+        utils.printf('', self.logfile)
+        utils.printf('=== Summary T-Values ===', self.logfile)
+        utils.printf('{:20s}{:>10s}{:>10s}{:>10s}{:>10s}{:>12s}{:>12s}{:>12s}{:>12s}'.format('INDEPENDENT VAR.','MIN','MEDIAN','MEAN','MAX','STD. DEV.','T-TEST','As Large', 'As Small'), self.logfile)
         for k,v in self.tvalues.items():
             tstats = self.model.tvalues[k]
             aslarge = sum([1 for c in v if c >= tstats]) / float(len(v))
             assmall = sum([1 for c in v if c <= tstats]) / float(len(v))
-            utils.printf('{:20s}{:10f}{:10f}{:10f}{:10f}{:10f}{:10f}{:10f}{:10f}'.format(k,min(v),sorted(v)[int(round(len(v)/2.))],round(sum(v)/len(v),2),max(v),round(np.std(v),6),round(float(tstats),2),aslarge,assmall))
+            utils.printf('{:20s}{:10f}{:10f}{:10f}{:10f}{:12f}{:12f}{:12f}{:12f}'.format(k,min(v),sorted(v)[int(len(v)/2)],sum(v)/len(v),max(v),round(np.std(v),6),round(float(tstats),2),aslarge,assmall), self.logfile)
 
     def _ttest(self):
         utils.printf('')
         utils.printf('========== T-TEST ==========')
-        utils.printf('{:20s} {:10s} {:10s} {:10s}'.format('IND. VAR.','COEF.','T-STAT','P-VALUE'))
+        utils.printf('{:25s} {:25s} {:25s} {:25s}'.format('IND. VAR.','COEF.','T-STAT','P-VALUE'))
 
         ts = {}
         lines = {}
         for k,vlist in self.betas.items():
             t = stats.ttest_1samp(vlist,self.model.params[k])
             ts[k] = abs(round(float(t[0]),6))
-            lines[k] = '{:20s} {:10f} {:10f} {:10f}'.format(k,self.model.params[k],round(float(t[0]),6),round(float(t[1]),6))
+            lines[k] = '{:20s} {:25f} {:25f} {:25f}'.format(k,self.model.params[k],round(float(t[0]),6),round(float(t[1]),6))
 
         ts = utils.sortDictByValue(ts,True)
         for t in ts:
@@ -259,32 +257,40 @@ class MRQAP():
         :param coef: string \in {betas, tvalues}
         :return:
         '''
+        ncols = 3
+        m = len(self.betas.keys())
+        ranges = range(ncols, m, ncols)
+        i = np.searchsorted(ranges, m, 'left')
+        nrows = len(ranges)
 
-        ### Data
-        if coef == 'betas':
-            dict_data = self.betas
-        elif coef == 'tvalues':
-            dict_data = self.tvalues
+        if i == nrows:
+            ranges.append((i+1)*ncols)
+            nrows += 1
 
-        ### Plot
-        ncols = len(self.betas.keys())
-        fig, axes = plt.subplots(1,ncols,figsize=(3*ncols,3))
+        fig = plt.figure(figsize=(8,3*i))
+        for idx,k in enumerate(self.betas.keys()):
+            plt.subplot(nrows,ncols,idx+1)
 
-        col = -1
-        for var, data in dict_data.items():
-            col += 1
-            ax = axes[col]
-            ax.hist(data)
+            if coef == 'betas':
+                plt.hist(self.betas[k])
+            elif coef == 'tvalues':
+                plt.hist(self.tvalues[k])
 
-            ax.set_xlabel('regression coefficients', fontsize=8)
-            ax.set_ylabel('frequency' if col==0 else '', fontsize=8)
-            ax.set_title(var)
-            ax.grid(True)
+            plt.xlabel('regression coefficients', fontsize=8)
+            plt.ylabel('frequency', fontsize=8)
+            plt.title(k)
+            plt.grid(True)
+
+        for ax in fig.get_axes():
+            ax.tick_params(axis='x', labelsize=5)
+            ax.tick_params(axis='y', labelsize=5)
 
         plt.tight_layout()
-
-        if fn is not None:
-            plt.savefig(fn)
-
-        plt.show()
+        plt.savefig(fn)
         plt.close()
+
+
+
+
+
+
