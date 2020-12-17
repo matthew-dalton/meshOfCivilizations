@@ -9,7 +9,7 @@ git clone https://github.com/matthew-dalton/meshOfCivilizations.git
 cd meshOfCivilizations
 python3 -m virtualenv venv
 source venv/bin/activate
-pip install < requirements.txt
+pip install -r requirements.txt
 ```
 
 After doing the above, you have the proper virtual environment setup!
