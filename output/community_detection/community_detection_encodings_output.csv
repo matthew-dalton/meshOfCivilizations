@@ -1,0 +1,91 @@
+Code,Index,Country,groups,group_num,isoa3,le3,fg,sg,ml,le2,le4,le8
+AE,1,United Arab Emirates,islam,0,ARE,1,4,3,4,1,1,4
+AO,2,Angola,afric,1,AGO,1,6,7,1,1,1,2
+AR,3,Argentina,latam,2,ARG,1,3,2,3,1,1,2
+AT,4,Austria,wstrn,3,AUT,1,3,2,3,1,1,2
+AU,5,Australia,wstrn,3,AUS,1,1,9,1,1,1,0
+AZ,6,Azerbaijan,islam,0,AZE,2,3,2,3,0,2,1
+BD,7,Bangladesh,islam,0,BGD,2,0,1,2,0,2,1
+BE,8,Belgium,wstrn,3,BEL,1,5,8,5,1,1,0
+BF,9,Burkina Faso,afric,1,BFA,1,0,8,0,1,1,3
+BG,10,Bulgaria,ortho,4,BGR,1,0,2,3,1,1,0
+BI,11,Burundi,afric,1,BDI,1,3,2,3,1,1,2
+BO,12,Bolivia,latam,2,BOL,1,0,12,0,1,1,2
+BR,13,Brazil,latam,2,BRA,1,0,8,0,1,1,3
+BY,14,Belarus,ortho,4,BLR,1,3,2,3,1,1,4
+CA,15,Canada,wstrn,3,CAN,1,2,11,2,1,1,4
+CD,16,The Democratic Republic Of Congo,no group,5,COD,0,0,0,0,0,0,0
+CH,17,Switzerland,wstrn,3,CHE,1,3,2,3,1,1,2
+CI,18,Cote D'Ivoire,afric,1,CIV,1,3,2,3,1,1,2
+CL,19,Chile,latam,2,CHL,1,4,3,4,1,1,2
+CM,20,Cameroon,afric,1,CMR,0,0,12,0,0,0,1
+CN,21,China,sinic,7,CHN,1,1,9,1,1,1,2
+CO,22,Colombia,latam,2,COL,1,3,2,5,1,1,0
+CZ,23,Czech Republic,wstrn,3,CZE,1,2,1,2,1,1,2
+DE,24,Germany,wstrn,3,DEU,1,3,2,3,1,1,2
+DK,25,Denmark,wstrn,3,DNK,2,1,6,1,0,2,1
+DO,26,Dominican Republic,latam,2,DOM,2,2,1,2,0,2,1
+DZ,27,Algeria,islam,0,DZA,1,5,7,5,1,1,0
+EC,28,Ecuador,latam,2,ECU,1,6,7,5,1,1,2
+EG,29,Egypt,islam,0,EGY,2,3,2,3,0,2,1
+ES,30,Spain,wstrn,3,ESP,0,0,12,0,0,0,1
+ET,31,Ethiopia,no group,5,ETH,1,7,0,6,1,1,2
+FI,32,Finland,wstrn,3,FIN,2,1,9,1,0,2,1
+FR,33,France,wstrn,3,FRA,1,0,12,0,1,1,3
+GB,34,United Kingdom,wstrn,3,GBR,1,4,3,4,1,1,2
+GH,35,Ghana,afric,1,GHA,1,6,7,5,1,1,0
+GR,36,Greece,ortho,4,GRC,1,2,11,2,1,1,4
+GT,37,Guatemala,latam,2,GTM,1,10,11,9,1,1,2
+HN,38,Honduras,latam,2,HND,1,1,6,1,1,1,2
+HT,39,Haiti,no group,5,HTI,1,5,8,5,1,1,0
+HU,40,Hungary,wstrn,3,HUN,1,9,4,8,1,1,2
+ID,41,Indonesia,islam,0,IDN,2,0,2,3,0,2,1
+IL,42,Israel,wstrn,3,ISR,1,0,12,0,1,1,2
+IN,43,India,hindu,8,IND,1,2,11,2,1,1,2
+IT,44,Italy,wstrn,3,ITA,1,9,4,8,1,1,2
+JO,45,Jordan,islam,0,JOR,1,5,8,5,1,1,0
+JP,46,Japan,no group,5,JPN,1,3,2,3,1,1,4
+KE,47,Kenya,afric,1,KEN,1,0,2,3,1,1,2
+KH,48,Cambodia,buddh,6,KHM,1,0,8,0,1,1,0
+KR,49,Republic Of Korea,sinic,7,KOR,2,1,6,1,0,2,1
+KZ,50,Kazakhstan,ortho,4,KAZ,1,6,7,1,1,1,2
+LA,51,Laos,buddh,6,LAO,1,1,6,1,1,1,2
+LK,52,Sri Lanka,buddh,6,LKA,1,5,8,5,1,1,0
+MA,53,Morocco,islam,0,MAR,0,0,12,0,0,0,1
+MG,54,Madagascar,afric,1,MDG,2,1,6,1,0,2,1
+ML,55,Mali,islam,0,MLI,1,10,11,9,1,1,2
+MX,56,Mexico,latam,2,MEX,1,3,2,3,1,1,2
+MY,57,Malaysia,islam,0,MYS,1,4,3,4,1,1,0
+MZ,58,Mozambique,afric,1,MOZ,1,2,11,2,1,1,4
+NG,59,Nigeria,afric,1,NGA,2,1,9,1,0,2,1
+NI,60,Nicaragua,latam,2,NIC,2,1,6,1,0,2,1
+NL,61,Netherlands,wstrn,3,NLD,1,8,5,7,1,1,5
+NP,62,Nepal,hindu,8,NPL,1,6,7,1,1,1,2
+PE,63,Peru,latam,2,PER,1,7,0,6,1,1,2
+PG,64,Papua New Guinea,wstrn,3,PNG,2,1,9,1,0,2,1
+PH,65,Philippines,wstrn,3,PHL,1,4,3,4,1,1,0
+PK,66,Pakistan,islam,0,PAK,1,5,8,5,1,1,0
+PL,67,Poland,wstrn,3,POL,1,6,7,5,1,1,5
+PT,68,Portugal,wstrn,3,PRT,1,3,2,3,1,1,5
+PY,69,Paraguay,latam,2,PRY,1,2,1,2,1,1,5
+RO,70,Romania,no group,5,ROU,0,0,0,0,0,0,0
+RU,71,Russia,ortho,4,RUS,1,3,8,0,1,1,2
+SA,72,Saudi Arabia,islam,0,SAU,2,1,6,1,0,2,1
+SD,73,Sudan,islam,0,SDN,2,6,7,5,0,2,1
+SE,74,Sweden,wstrn,3,SWE,1,0,7,5,1,1,2
+SG,75,Singapore,buddh,6,SGP,1,6,1,1,1,1,4
+SK,76,Slovakia,wstrn,3,SVK,1,5,7,5,1,1,0
+SN,77,Senegal,islam,0,SEN,2,11,10,10,0,2,1
+SV,78,El Salvador,latam,2,SLV,2,11,10,10,0,2,1
+TH,79,Thailand,buddh,6,THA,2,0,1,2,0,2,1
+TN,80,Tunisia,islam,0,TUN,1,2,1,2,1,1,4
+TR,81,Turkey,islam,0,TUR,1,5,7,5,1,1,0
+UA,82,Ukraine,ortho,4,UKR,1,10,11,9,1,1,2
+US,83,United States,wstrn,3,USA,1,8,5,7,1,1,5
+UZ,84,Uzbekistan,islam,0,UZB,1,4,3,4,1,1,0
+VE,85,Venezuela,latam,2,VEN,2,1,6,1,0,2,1
+VN,86,Vietnam,sinic,7,VNM,2,11,10,10,0,2,1
+YE,87,Yemen,islam,0,YEM,1,8,5,7,1,1,5
+ZA,88,South Africa,afric,1,ZAF,1,4,3,4,1,1,2
+ZM,89,Zambia,afric,1,ZMB,1,5,2,5,1,1,0
+ZW,90,Zimbabwe,no group,5,ZWE,1,1,9,1,1,1,4
